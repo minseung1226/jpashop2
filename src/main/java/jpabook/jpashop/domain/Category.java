@@ -3,6 +3,7 @@ package jpabook.jpashop.domain;
 import jpabook.jpashop.domain.item.Item;
 
 import javax.persistence.*;
+import java.awt.desktop.FilesEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class Category extends BaseEntity{
     private String name;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 
